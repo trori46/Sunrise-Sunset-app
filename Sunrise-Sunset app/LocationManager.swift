@@ -10,19 +10,45 @@ import CoreLocation
 import UIKit
 
 class LocationManager: NSObject, CLLocationManagerDelegate {
-    var locationManager:CLLocationManager!
-    //var currentLocation = LocationManager.determineMyCurrentLocation()
+    var locationManager: CLLocationManager!
     
-    func determineMyCurrentLocation() -> CLLocationCoordinate2D {
+    func determineMyCurrentLocation() {
         locationManager = CLLocationManager()
         if CLLocationManager.locationServicesEnabled() {
             locationManager.delegate = self
             locationManager.requestWhenInUseAuthorization()
+            locationManager.desiredAccuracy = kCLLocationAccuracyBest
+            if CLLocationManager.authorizationStatus() == .notDetermined
+            {
+                locationManager.requestWhenInUseAuthorization()
+            }
             locationManager.startUpdatingLocation()
-            //locationManager.startUpdatingHeading()
+        
+            
+            
         }
-        return locationManager.location!.coordinate
+        
+        
+        
     }
+    
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        // locationManager.requestLocation()
+        let userLocation:CLLocation = locations[0] as CLLocation
+        
+        // Call stopUpdatingLocation() to stop listening for location updates,
+        // other wise this function will be called every time when user location changes.
+        
+        manager.stopUpdatingLocation()
+        
+        print("user latitude = \(userLocation.coordinate.latitude)")
+        print("user longitude = \(userLocation.coordinate.longitude)")
+        //     let locValue : CLLocationCoordinate2D = locationManager.location!.coordinate
+        //   region = MKCoordinateRegion(center: locValue, span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
+        
+    }
+    
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error)
     {
@@ -36,7 +62,6 @@ class LocationManager: NSObject, CLLocationManagerDelegate {
         }
         
     }
-
    
     
 }

@@ -1,3 +1,4 @@
+
 //
 //  ViewController.swift
 //  Sunrise-Sunset app
@@ -12,8 +13,10 @@ import CoreLocation
 
 
 class MainViewController: UITableViewController {
+    var placesClient: GMSPlacesClient?
+    
     var place: GMSPlace?
-    var locManager: LocationManager?
+    var locManager = LocationManager()
     var dayManager: APIManager?
     var day: Day?
     @IBOutlet weak var locationLbl: UILabel!
@@ -22,11 +25,19 @@ class MainViewController: UITableViewController {
     @IBAction func searchBtn(_ sender: Any) {
         let acController = GMSAutocompleteViewController()
         acController.delegate = self as GMSAutocompleteViewControllerDelegate
-        acController.autocompleteFilter?.type = .city
+        let filter = GMSAutocompleteFilter()
+        filter.type = GMSPlacesAutocompleteTypeFilter.city
         present(acController, animated: true, completion: nil)
     }
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        locManager.determineMyCurrentLocation()
+        placesClient = GMSPlacesClient.shared()
+        getCurrentPlaces()
+    }
+    
     @IBAction func currentLocationBtn(_ sender: Any) {
-        
+        getCurrentPlaces()
         }
     
     func setupMainView(place: GMSPlace?) {
@@ -39,7 +50,16 @@ class MainViewController: UITableViewController {
         self.tableView.reloadData()
         }
     }
+    func setupMainView(place: GMSPlace?, name: GMSAddressComponent) {
+        self.place = place
+        locationLbl.text! = name.name
+        _ = APIManager(lat: (String(describing: place!.coordinate.latitude)), long: (String(describing: place!.coordinate.longitude))) { day, errorMessage in
+            self.day = day
+            self.sunriseLbl.text = day.results?.sunrise
+            self.sunsetLbl.text = day.results?.sunset
+            self.tableView.reloadData()
+    }
     }
 
-
+}
    

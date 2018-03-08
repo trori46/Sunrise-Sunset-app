@@ -30,4 +30,26 @@ extension MainViewController: GMSAutocompleteViewControllerDelegate {
         print("Autocomplete was cancelled.")
         dismiss(animated: true, completion: nil)
     }
+      func getCurrentPlaces() {
+        placesClient?.currentPlace(callback: { (placeLikelihoodList, error) -> Void in
+    if let error = error {
+    print("Pick Place error: \(error.localizedDescription)")
+    return
+    }
+    
+    if let placeLikelihoodList = placeLikelihoodList {
+    for likelihood in placeLikelihoodList.likelihoods {
+    let place = likelihood.place
+    let address = place.addressComponents
+        for component in address! {
+            if component.type == "locality" || component.type == "city" {
+                print(component.name)
+                self.setupMainView(place: place, name: component)
+            }
+        }
+    
+    }
+    }
+    })
+    }
 }
