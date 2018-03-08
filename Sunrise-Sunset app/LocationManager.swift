@@ -18,29 +18,11 @@ class LocationManager: NSObject, CLLocationManagerDelegate {
         if CLLocationManager.locationServicesEnabled() {
             locationManager.delegate = self
             locationManager.requestWhenInUseAuthorization()
-
-            
             locationManager.startUpdatingLocation()
-            //       locationManager.startUpdatingHeading()
-            
-            
+            //locationManager.startUpdatingHeading()
         }
         return locationManager.location!.coordinate
     }
-    
-    
-//    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-//        let userLocation:CLLocation = locations[0] as CLLocation
-//  
-//        manager.stopUpdatingLocation()
-//        
-//        print("user latitude = \(userLocation.coordinate.latitude)")
-//        print("user longitude = \(userLocation.coordinate.longitude)")
-//        //let locValue : CLLocationCoordinate2D = locationManager.location!.coordinate
-//        //   region = MKCoordinateRegion(center: locValue, span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
-//        
-//    }
-    
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error)
     {
@@ -55,10 +37,6 @@ class LocationManager: NSObject, CLLocationManagerDelegate {
         
     }
 
-    func getCoordinateFrom(address: String, completion: @escaping(_ coordinate: CLLocationCoordinate2D?, _ error: Error?) -> () ) {
-        CLGeocoder().geocodeAddressString(address) { placemarks, error in
-            completion(placemarks?.first?.location?.coordinate, error)
-        }
-    }
+   
     
 }

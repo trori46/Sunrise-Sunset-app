@@ -10,68 +10,26 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Main View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Sunrise_Sunset_app" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="MainViewController" customModule="Sunrise_Sunset_app" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="4Fk-xd-2z5">
-                                <rect key="frame" x="0.0" y="10" width="375" height="56"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </searchBar>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VJC-Ss-m51">
-                                <rect key="frame" x="90" y="160" width="194" height="58"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="58" id="zyE-Dt-tcV"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sunrise" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D0V-Iq-Y2q">
-                                <rect key="frame" x="135" y="263" width="105" height="58"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sunset" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wDW-P7-bIw">
-                                <rect key="frame" x="135" y="356" width="105" height="52"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="52" id="An5-tp-uM1"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DJe-5c-bQI">
-                                <rect key="frame" x="24" y="607" width="40" height="40"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="c06-f4-pUJ"/>
-                                </constraints>
-                                <state key="normal" title="CL"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DYm-s8-6rV">
+                                <rect key="frame" x="164" y="318" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="gfg:" destination="BYZ-38-t0r" eventType="touchUpInside" id="F3Z-9E-G7H"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="VJC-Ss-m51" firstAttribute="centerX" secondItem="D0V-Iq-Y2q" secondAttribute="centerX" id="3ma-93-kBI"/>
-                            <constraint firstItem="4Fk-xd-2z5" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="7YA-ta-Ugt"/>
-                            <constraint firstItem="wDW-P7-bIw" firstAttribute="leading" secondItem="D0V-Iq-Y2q" secondAttribute="leading" id="ESs-Qk-cZq"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="wDW-P7-bIw" secondAttribute="bottom" constant="259" id="GCW-EA-HWh"/>
-                            <constraint firstItem="VJC-Ss-m51" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="90" id="Go3-4g-oNe"/>
-                            <constraint firstItem="VJC-Ss-m51" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="KAK-h0-yZm"/>
-                            <constraint firstItem="wDW-P7-bIw" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="135" id="OPD-3q-REa"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="4Fk-xd-2z5" secondAttribute="trailing" id="OcG-AH-8KQ"/>
-                            <constraint firstAttribute="bottom" secondItem="DJe-5c-bQI" secondAttribute="bottom" constant="20" symbolic="YES" id="Sxc-MZ-trN"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="DJe-5c-bQI" secondAttribute="trailing" constant="311" id="TIt-bK-CcB"/>
-                            <constraint firstItem="VJC-Ss-m51" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="160" id="d9i-r9-J2A"/>
-                            <constraint firstItem="VJC-Ss-m51" firstAttribute="top" secondItem="4Fk-xd-2z5" secondAttribute="bottom" constant="94" id="ePl-0l-2YG"/>
-                            <constraint firstItem="DJe-5c-bQI" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="24" id="nID-bk-JeL"/>
-                            <constraint firstItem="wDW-P7-bIw" firstAttribute="top" secondItem="D0V-Iq-Y2q" secondAttribute="bottom" constant="35" id="sMn-9Q-9pd"/>
-                            <constraint firstItem="VJC-Ss-m51" firstAttribute="centerX" secondItem="wDW-P7-bIw" secondAttribute="centerX" id="taD-w9-3kH"/>
-                            <constraint firstItem="D0V-Iq-Y2q" firstAttribute="top" secondItem="VJC-Ss-m51" secondAttribute="bottom" constant="45" id="v5M-0K-PtW"/>
+                            <constraint firstItem="DYm-s8-6rV" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="BUd-MI-euy"/>
+                            <constraint firstItem="DYm-s8-6rV" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="iXP-N8-1B6"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
