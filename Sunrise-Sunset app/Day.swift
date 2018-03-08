@@ -8,7 +8,11 @@
 
 import Foundation
 
-struct Day {
-    var sunrise: Date
-    var sunset: Date
+struct Day: Decodable {
+    var results: Results?
+}
+
+struct Results: Decodable {
+    var sunrise: String?
+    var sunset: String?
 }

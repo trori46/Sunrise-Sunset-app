@@ -10,14 +10,12 @@ import Foundation
 import GooglePlaces
 
 extension MainViewController: GMSAutocompleteViewControllerDelegate {
-    
-    
+   
     // Handle the user's selection.
     func viewController(_ viewController: GMSAutocompleteViewController, didAutocompleteWith place: GMSPlace) {
         print(place.coordinate)
-        print("Place name: \(place.name)")
-        print("Place address: \(place.formattedAddress)")
-        print("Place attributions: \(place.attributions)")
+        setupMainView(place: place)
+        
         dismiss(animated: true, completion: nil)
     }
     
