@@ -55,8 +55,8 @@ class MainViewController: UITableViewController {
         locationLbl.text! = place?.name ?? "fsdfs"
         _ = APIManager(lat: (String(describing: place!.coordinate.latitude)), long: (String(describing: place!.coordinate.longitude))) { day, errorMessage in
             self.day = day
-            self.sunriseLbl.text = day.results?.sunrise
-            self.sunsetLbl.text = day.results?.sunset
+            self.sunriseLbl.text = self.convertUTCDateToLocalDate(dateToConvert: (day.results?.sunrise)!)
+            self.sunsetLbl.text = self.convertUTCDateToLocalDate(dateToConvert: (day.results?.sunset)!)
         self.tableView.reloadData()
         }
     }
@@ -65,11 +65,23 @@ class MainViewController: UITableViewController {
         locationLbl.text! = name.name
         _ = APIManager(lat: (String(describing: place!.coordinate.latitude)), long: (String(describing: place!.coordinate.longitude))) { day, errorMessage in
             self.day = day
-            self.sunriseLbl.text = day.results?.sunrise
-            self.sunsetLbl.text = day.results?.sunset
+            self.sunriseLbl.text = self.convertUTCDateToLocalDate(dateToConvert: (day.results?.sunrise)!)
+            self.sunsetLbl.text = self.convertUTCDateToLocalDate(dateToConvert: (day.results?.sunset)!)
             self.tableView.reloadData()
     }
     }
 
+    func convertUTCDateToLocalDate(dateToConvert:String) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss+00:00"
+        dateFormatter.timeZone = TimeZone(abbreviation: "UTC")
+        let date = dateFormatter.date(from: dateToConvert)// create   date from string
+        
+        // change to a readable time format and change to local time zone
+        dateFormatter.dateFormat = "EEE, MMM d, yyyy - h:mm a"
+        dateFormatter.timeZone = NSTimeZone.local
+        return dateFormatter.string(from: date!)
+
+    }
+
 }
-   

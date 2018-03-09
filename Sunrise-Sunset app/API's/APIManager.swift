@@ -23,7 +23,7 @@ class APIManager {
     }
     
     func fetchRepo(completion: @escaping (Day, String?) -> ()) {
-        let request = "https://api.sunrise-sunset.org/json?lat=\(lat!)&lng=\(long!)&date=today"
+        let request = "https://api.sunrise-sunset.org/json?lat=\(lat!)&lng=\(long!)&formatted=0"
         
         if let url = URL(string: request) {
             URLSession.shared.dataTask(with: url) {  (data, response, error) in
@@ -43,3 +43,4 @@ class APIManager {
     
 }
 }
+
