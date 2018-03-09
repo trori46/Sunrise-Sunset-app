@@ -79,18 +79,50 @@
 		7287E226205035F70066C75F /* Sunrise-Sunset app */ = {
 			isa = PBXGroup;
 			children = (
-				7287E239205036350066C75F /* APIManager.swift */,
-				7287E227205035F70066C75F /* AppDelegate.swift */,
-				7287E229205035F70066C75F /* MainViewController.swift */,
-				7287E22B205035F70066C75F /* Main.storyboard */,
-				7287E22E205035F70066C75F /* Assets.xcassets */,
-				7287E230205035F70066C75F /* LaunchScreen.storyboard */,
+				72D1FBE9205297EB0036D012 /* Supporting Files */,
+				72D1FBE8205297D00036D012 /* View */,
+				72D1FBE7205297B30036D012 /* LocationManager */,
+				72D1FBE62052977B0036D012 /* API's */,
 				7287E233205035F70066C75F /* Info.plist */,
-				7287E23B205036900066C75F /* LocationManager.swift */,
-				7287E23D2050396B0066C75F /* Day.swift */,
-				728135FE2051741C00146CB9 /* GooglePlacesAPI.swift */,
 			);
 			path = "Sunrise-Sunset app";
+			sourceTree = "<group>";
+		};
+		72D1FBE62052977B0036D012 /* API's */ = {
+			isa = PBXGroup;
+			children = (
+				7287E239205036350066C75F /* APIManager.swift */,
+				728135FE2051741C00146CB9 /* GooglePlacesAPI.swift */,
+				7287E23D2050396B0066C75F /* Day.swift */,
+			);
+			path = "API's";
+			sourceTree = "<group>";
+		};
+		72D1FBE7205297B30036D012 /* LocationManager */ = {
+			isa = PBXGroup;
+			children = (
+				7287E23B205036900066C75F /* LocationManager.swift */,
+			);
+			path = LocationManager;
+			sourceTree = "<group>";
+		};
+		72D1FBE8205297D00036D012 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				7287E229205035F70066C75F /* MainViewController.swift */,
+				7287E22B205035F70066C75F /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		72D1FBE9205297EB0036D012 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				7287E227205035F70066C75F /* AppDelegate.swift */,
+				7287E230205035F70066C75F /* LaunchScreen.storyboard */,
+				7287E22E205035F70066C75F /* Assets.xcassets */,
+			);
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		D4C0E2FE059453F1651EDE59 /* Pods */ = {

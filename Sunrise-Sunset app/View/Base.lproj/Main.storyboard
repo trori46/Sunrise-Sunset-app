@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="j59-6A-r6g">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Main View Controller-->
+        <scene sceneID="Npn-TB-tvQ">
+            <objects>
+                <tableViewController autoresizesArchivedViewToFullSize="NO" automaticallyAdjustsScrollViewInsets="NO" id="j59-6A-r6g" customClass="MainViewController" customModule="Sunrise_Sunset_app" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="BCO-aO-VYy">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <sections>
+                            <tableViewSection id="8gP-1a-l9q">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" alpha="0.80000000000000004" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" focusStyle="custom" rowHeight="569" id="qjb-dF-2Fv">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="569"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="qjb-dF-2Fv" id="26i-4E-9SX">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="568.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9HE-fn-DR3">
+                                                    <rect key="frame" x="16" y="31" width="40" height="36"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="36" id="hCg-CL-1qn"/>
+                                                        <constraint firstAttribute="width" constant="40" id="t25-O8-EZB"/>
+                                                    </constraints>
+                                                    <state key="normal" backgroundImage="localBtn"/>
+                                                    <connections>
+                                                        <action selector="currentLocationBtn:" destination="j59-6A-r6g" eventType="touchUpInside" id="fB0-kP-cRu"/>
+                                                    </connections>
+                                                </button>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P24-zo-gRw">
+                                                    <rect key="frame" x="4" y="94" width="371" height="118"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="118" id="IGT-p6-WMW"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="49"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Thc-U5-vkf">
+                                                    <rect key="frame" x="80" y="31" width="40" height="36"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="40" id="oWs-0E-z0B"/>
+                                                    </constraints>
+                                                    <state key="normal" backgroundImage="searchBtn">
+                                                        <color key="titleColor" red="0.0065374028497409142" green="0.0065374028497409142" blue="0.0065374028497409142" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="searchBtn:" destination="j59-6A-r6g" eventType="touchUpInside" id="o9V-O1-xUe"/>
+                                                    </connections>
+                                                </button>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="abo-F5-ADI">
+                                                    <rect key="frame" x="33" y="220" width="313" height="338"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sunrise:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ud6-ez-eFP">
+                                                            <rect key="frame" x="0.0" y="0.0" width="313" height="84.5"/>
+                                                            <fontDescription key="fontDescription" type="italicSystem" pointSize="26"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7FH-UN-9vG">
+                                                            <rect key="frame" x="0.0" y="84.5" width="313" height="84.5"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sunset:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lqg-Gj-IW7">
+                                                            <rect key="frame" x="0.0" y="169" width="313" height="84.5"/>
+                                                            <fontDescription key="fontDescription" type="italicSystem" pointSize="26"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Akp-1m-ytz">
+                                                            <rect key="frame" x="0.0" y="253.5" width="313" height="84.5"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottomMargin" secondItem="9HE-fn-DR3" secondAttribute="bottom" constant="491" id="4pm-r0-BYD"/>
+                                                <constraint firstItem="P24-zo-gRw" firstAttribute="centerX" secondItem="26i-4E-9SX" secondAttribute="centerX" constant="2" id="58E-IW-ixv"/>
+                                                <constraint firstItem="9HE-fn-DR3" firstAttribute="top" secondItem="abo-F5-ADI" secondAttribute="bottom" constant="-527" id="6wi-CQ-5Ra"/>
+                                                <constraint firstItem="abo-F5-ADI" firstAttribute="leading" secondItem="26i-4E-9SX" secondAttribute="leadingMargin" constant="17" id="DzQ-C1-qip"/>
+                                                <constraint firstItem="9HE-fn-DR3" firstAttribute="bottom" secondItem="Thc-U5-vkf" secondAttribute="bottom" id="Sm3-DU-e2K"/>
+                                                <constraint firstItem="P24-zo-gRw" firstAttribute="top" secondItem="26i-4E-9SX" secondAttribute="topMargin" constant="63" id="YYg-wc-3u7"/>
+                                                <constraint firstItem="Thc-U5-vkf" firstAttribute="leading" secondItem="9HE-fn-DR3" secondAttribute="trailing" constant="24" id="bmH-7g-gyg"/>
+                                                <constraint firstItem="9HE-fn-DR3" firstAttribute="top" secondItem="Thc-U5-vkf" secondAttribute="top" id="gfZ-Yh-QKw"/>
+                                                <constraint firstItem="P24-zo-gRw" firstAttribute="centerX" secondItem="abo-F5-ADI" secondAttribute="centerX" id="iNL-l5-62G"/>
+                                                <constraint firstItem="P24-zo-gRw" firstAttribute="leading" secondItem="26i-4E-9SX" secondAttribute="leadingMargin" constant="-12" id="j7Q-wd-14b"/>
+                                                <constraint firstItem="9HE-fn-DR3" firstAttribute="leading" secondItem="26i-4E-9SX" secondAttribute="leadingMargin" id="tcf-hU-hgG"/>
+                                                <constraint firstItem="abo-F5-ADI" firstAttribute="top" secondItem="P24-zo-gRw" secondAttribute="bottom" constant="8" id="yZg-A5-G3P"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="j59-6A-r6g" id="SZn-qn-KRe"/>
+                            <outlet property="delegate" destination="j59-6A-r6g" id="uWe-GW-Kna"/>
+                        </connections>
+                    </tableView>
+                    <connections>
+                        <outlet property="locationLbl" destination="P24-zo-gRw" id="Dgx-CZ-DhC"/>
+                        <outlet property="sunriseLbl" destination="7FH-UN-9vG" id="ECh-Bc-59b"/>
+                        <outlet property="sunsetLbl" destination="Akp-1m-ytz" id="nNk-Ep-tTO"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gwk-W6-Eat" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-335.19999999999999" y="87.706146926536732"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="localBtn" width="128" height="128"/>
+        <image name="searchBtn" width="128" height="128"/>
+    </resources>
+</document>

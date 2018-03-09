@@ -14,7 +14,7 @@ import CoreLocation
 
 class MainViewController: UITableViewController {
     var placesClient: GMSPlacesClient?
-    
+    let acController = GMSAutocompleteViewController()
     var place: GMSPlace?
     var locManager = LocationManager()
     var dayManager: APIManager?
@@ -23,14 +23,14 @@ class MainViewController: UITableViewController {
     @IBOutlet weak var sunriseLbl: UILabel!
     @IBOutlet weak var sunsetLbl: UILabel!
     @IBAction func searchBtn(_ sender: Any) {
-        let acController = GMSAutocompleteViewController()
         acController.delegate = self as GMSAutocompleteViewControllerDelegate
-        let filter = GMSAutocompleteFilter()
-        filter.type = GMSPlacesAutocompleteTypeFilter.city
+        setupSearchView()
         present(acController, animated: true, completion: nil)
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.tableView.backgroundView = UIImageView(image: UIImage(named: "sunset.jpg"))
+        self.tableView.backgroundView?.alpha = 0.7
         locManager.determineMyCurrentLocation()
         placesClient = GMSPlacesClient.shared()
         getCurrentPlaces()
@@ -40,6 +40,16 @@ class MainViewController: UITableViewController {
         getCurrentPlaces()
         }
     
+    func setupSearchView() {
+        acController.primaryTextColor = .white
+        acController.secondaryTextColor = .white
+        acController.navigationController?.navigationBar.barTintColor = .darkGray
+        acController.tableCellBackgroundColor = .darkGray;
+        acController.tableCellSeparatorColor = .lightGray;
+        acController.tintColor = .lightGray;
+        let filter = GMSAutocompleteFilter()
+        filter.type = GMSPlacesAutocompleteTypeFilter.city
+    }
     func setupMainView(place: GMSPlace?) {
         self.place = place
         locationLbl.text! = place?.name ?? "fsdfs"
