@@ -19,6 +19,7 @@ class MainViewController: UITableViewController {
     var locManager = LocationManager()
     var dayManager: APIManager?
     var day: Day?
+    
     @IBOutlet weak var locationLbl: UILabel!
     @IBOutlet weak var sunriseLbl: UILabel!
     @IBOutlet weak var sunsetLbl: UILabel!
@@ -41,12 +42,12 @@ class MainViewController: UITableViewController {
         }
     
     func setupSearchView() {
-        acController.primaryTextColor = .white
-        acController.secondaryTextColor = .white
+        acController.primaryTextColor = .darkGray
+        acController.secondaryTextColor = .darkGray
         acController.navigationController?.navigationBar.barTintColor = .darkGray
-        acController.tableCellBackgroundColor = .darkGray;
-        acController.tableCellSeparatorColor = .lightGray;
-        acController.tintColor = .lightGray;
+        acController.tableCellBackgroundColor = UIColor(patternImage: #imageLiteral(resourceName: "wall"))
+        acController.tableCellSeparatorColor = .lightGray
+        acController.tintColor = .lightGray
         let filter = GMSAutocompleteFilter()
         filter.type = GMSPlacesAutocompleteTypeFilter.city
     }

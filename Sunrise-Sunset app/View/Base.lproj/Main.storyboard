@@ -45,7 +45,7 @@
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="118" id="IGT-p6-WMW"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="49"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="47"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Thc-U5-vkf">
